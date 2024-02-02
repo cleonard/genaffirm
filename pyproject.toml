@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "genaffirm"
+version = "0.1.0"
+description = "Integrate Stripe and Affirm for financing options"
+authors = ["cleonard <ccl@chrisleonard.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django = "^5.0.1"
+gunicorn = "^21.2.0"
+django-environ = "^0.11.2"
+psycopg2 = "^2.9.9"
+pyjwt = "^2.8.0"
+django-extensions = "^3.2.3"
+stripe = "^7.13.0"
+whitenoise = "^6.6.0"
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.1.14"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

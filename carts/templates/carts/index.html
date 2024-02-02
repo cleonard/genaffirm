@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% load cart_tags %}
+
+{% block content %}
+
+<h1 class="title">Carts</h1>
+
+{% if not carts %}
+  <h4 class="empty-listing">
+    User <strong>{{ user }}</strong> has no active carts.
+  </h4>
+{% else %}
+  <table style="margin: 1em auto;">
+    <tr>
+      <th>Cart Name</th>
+      <th>Notes</th>
+      <th>Amount</th>
+    </tr>
+    {% for cart in carts %}
+      <tr>
+        <td><a href="{% url 'carts:cart-show' cart.token %}">{{ cart.name }}</a></td>
+        <td>{{ cart.notes }}</td>
+        <td>{{ cart.amount|currency }}
+      </tr>
+    {% endfor %}
+  </table>
+{% endif %}
+
+<div class="actions" style="margin: 2em 0;">
+  <a class="action" href="{% url 'carts:cart-create' %}">Create New Cart</a>
+</div>
+
+{% endblock %}

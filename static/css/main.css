@@ -1,0 +1,224 @@
+/* Reset */
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  border: 0;
+  outline: 0;
+  background: transparent; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* Top-level */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  background: #eee;
+  font: 400 16px/1.5 "DM Sans", sans-serif;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1.5em auto;
+  padding: 0 1.25em;
+  max-width: 1200px;
+}
+
+/* Layout  */
+
+header {
+  background: #ddd;
+  padding: 1em;
+}
+header img {
+  display: block;
+  margin: auto;
+  width: 200px;
+}
+
+/* Tables */
+
+th, td {
+  background: white;
+  padding: 0.25em 0.75em;
+}
+td {
+  border-bottom: 1px solid #aaa;
+}
+th {
+  background: #444;
+  color: white;
+}
+
+/* Authentication form */
+
+form {
+  background: white;
+  margin: 1.5em auto;
+  padding: 1em;
+  width: 28em;
+}
+
+.form-wrapper h1, h1.title {
+  color: #444;
+  font-size: 1.75em;
+  padding: 0.35em;
+  text-align: center;
+}
+
+form form {
+  padding: 1em;
+}
+
+form label {
+  display: block;
+  font-size: 0.85em;
+  margin: 0.5em 0 0;
+  text-transform: uppercase;
+}
+
+form input[type=text],
+form input[type=password] {
+  font: 400 16px/1.5 "DM Sans", sans-serif;
+  padding: 0.25em 0.75em;
+  width: 100%;
+}
+
+.submit {
+  margin-top: 1em;
+  text-align: center;
+}
+
+button, a.button, input[type=submit] {
+  background: #1f5c9f;
+  border: 0;
+  border-radius: 3px;
+  color: lemonchiffon;
+  font: 400 16px/1.5 "DM Sans", sans-serif;
+  padding: 0.5em 0.75em;
+}
+
+.actions {
+  text-align: center;
+}
+
+a.action {
+  background: white;
+  border: 1px solid #333;
+  border-radius: 3px;
+  display: inline-block;
+  color: #333;
+  padding: 0.5em 0.75em;
+  margin: 0 auto;
+}
+
+#auth {
+  margin: 2em 0 3em;
+  text-align: center;
+}
+
+#auth .button {
+  display: inline-block;
+  margin-top: 0.75em;
+}
+
+/* Flash messages */
+
+ul.messages {
+  margin: 0;
+  padding: 0;
+}
+
+ul.messages li {
+  color: white;
+  padding: 0.5em 1em;
+  text-align: center;
+}
+
+ul.messages .success {
+  background-color: darkgreen;
+}
+ul.messages .error {
+  background-color: crimson;
+}
+ul.messages .warning {
+  background-color: slategray;
+}
+
+/* Misc */
+
+h4.empty-listing {
+  color: #666;
+  font-size: 1.5em;
+  font-style: italic;
+  font-weight: 400;
+  text-align: center;
+}
+
+h4.empty-listing strong {
+  color: black;
+}
+
+#cart-display {
+  background: white;
+  margin: 1em auto;
+  padding: 1em;
+  max-width: 50em;
+}
+
+#cart-display h3 {
+  color: #666;
+  font-size: 0.85em;
+  font-weight: 700;
+  margin: 0;
+  text-align: center;
+}
+
+.cart-amount {
+  font-size: 3em;
+  font-weight: 700;
+  text-align: center;
+}
+
+.cart-control {
+  margin: 1em 0;
+  text-align: center;
+}

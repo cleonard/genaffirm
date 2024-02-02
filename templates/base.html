@@ -1,0 +1,49 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}GenovationsRegen Checkout{% endblock %}</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,700;1,9..40,400;1,9..40,700&family=Gruppo&display=swap" rel="stylesheet">
+  <link href="{% static 'css/main.css' %}" rel="stylesheet">
+</head>
+<body>
+  <div id="app">
+    <header>
+      <img src="{% static 'img/genovations.svg' %}" alt="Genovations Regen logo">
+    </header>
+    <!-- Flash messages if needed -->
+    {% if messages %}
+      <ul class="messages">
+          {% for message in messages %}
+          <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+          {% if 'safe' in message.tags %}
+            {{ message|safe }}
+          {% else %}
+            {{ message }}
+          {% endif %}
+          </li>
+          {% endfor %}
+      </ul>
+    {% endif %}
+
+    <div class="wrapper">
+      <main>
+        {% block content %}{% endblock %}
+      </main>
+      {% if request.user.is_authenticated %}
+        <div id="auth">
+          Logged in as {{ request.user}} ({{ request.user.email }})<br>
+          <a class="button" href="{% url 'authentication:auth-signout' %}">Log Out</a>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+  <script src="{% static 'js/htmx.min.js' %}"></script>
+</body>
+</html>
