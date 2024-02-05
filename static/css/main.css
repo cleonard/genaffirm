@@ -222,3 +222,14 @@ h4.empty-listing strong {
   margin: 1em 0;
   text-align: center;
 }
+
+#stripe_test_mode {
+  background: #1f5c9f;
+  color: lemonchiffon;
+  font-size: 0.825em;
+  font-weight: 700;
+  line-height: 1;
+  padding: 0.5em 1em;
+  text-align: center;
+  text-transform: uppercase;
+}

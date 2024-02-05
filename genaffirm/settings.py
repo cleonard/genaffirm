@@ -33,6 +33,9 @@ environ.Env.read_env(os.path.join(BASE_DIR, ".env"))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ["SECRET_KEY"]
 
+# Stripe "mode" (pk_test vs. pk_prod)
+STRIPE_TEST = "_test_" in os.environ["STRIPE_PUBLISHABLE_KEY"]
+
 # Prod v. local
 IS_HEROKU_APP = "DYNO" in os.environ and not "CI" in os.environ
 
@@ -82,6 +85,7 @@ TEMPLATES = [
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
+                "genaffirm.context.stripe_test_mode",
                 "django.template.context_processors.debug",
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",

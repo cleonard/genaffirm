@@ -13,6 +13,7 @@
   <link href="{% static 'css/main.css' %}" rel="stylesheet">
 </head>
 <body>
+  {% if STRIPE_TEST %}<div id="stripe_test_mode">IN STRIPE TEST MODE</div>{% endif %}
   <div id="app">
     <header>
       <img src="{% static 'img/genovations.svg' %}" alt="Genovations Regen logo">
