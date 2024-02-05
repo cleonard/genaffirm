@@ -34,7 +34,8 @@ def create(request):
             cart.save()
 
             # Redirect
-            return redirect(request, "carts:cart-show", cart.token)
+            redirect_path = f"/carts/{cart.token}"
+            return redirect(redirect_path)
     else:
         form = CartForm()
 
@@ -57,4 +58,8 @@ def show(request, token):
 
 @login_required
 def complete(request, token):
-    ...
+    cart = Cart.objects.get(token=token)
+    if not cart.stripe_session_id:
+        cart.stripe_session_id = request.args.get("stripe_session_id")
+        cart.save()
+    context = {"cart": cart, }

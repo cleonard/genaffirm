@@ -12,6 +12,7 @@ class Cart(models.Model):
     name = models.CharField()
     notes = models.TextField(blank=True)
     amount = models.PositiveIntegerField(default=0)
+    stripe_session_id = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
