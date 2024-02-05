@@ -38,6 +38,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
+    "genaffirm-46e64d343f39.herokuapp.com",
 ]
 
 # Application definition
