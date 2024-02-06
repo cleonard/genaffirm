@@ -14,7 +14,7 @@ from carts.stripe import create_stripe_session
 @login_required
 def listing(request):
     """Home/default view when authed - list user's existing carts"""
-    carts = Cart.objects.all()
+    carts = Cart.objects.filter(user=request.user).all()
     context = {"carts": carts}
     return render(request, "carts/index.html", context=context)
 
