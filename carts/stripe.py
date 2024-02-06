@@ -10,8 +10,8 @@ def create_stripe_session(cart_obj):
     token = cart_obj.token
 
     # URLs: success_url and cancel_url
-    success_url = f"{BASE_DOMAIN}/carts/{token}/receipt"
-    cancel_url = f"{BASE_DOMAIN}/carts/{token}?cancelled=true"
+    success_url = f"{BASE_DOMAIN}carts/{token}/receipt"
+    cancel_url = f"{BASE_DOMAIN}carts/{token}?cancelled=true"
 
     session = stripe.checkout.Session.create(
         payment_method_types=["card", "affirm"],
