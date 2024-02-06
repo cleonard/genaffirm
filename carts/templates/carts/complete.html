@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% load cart_tags %}
+
+{% block content %}
+
+<div id="cart-display">
+  <h3>CART</h3>
+  <h1 class="title">COMPLETED: {{ cart.name }}</h1>
+  <h4 style="text-align: center; color: #666; margin: 0 0 1em;">Stripe Session: {{ cart.stripe_session_id }}</h4>
+  <div class="cart-notes" style="text-align: center;">
+    {{ cart.notes|clean_notes|safe }}
+  </div>
+  <div class="cart-amount">
+    {{ cart.amount|currency }}
+  </div>
+</div>
+
+{% endblock %}

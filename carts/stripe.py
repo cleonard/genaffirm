@@ -10,7 +10,7 @@ def create_stripe_session(cart_obj):
     token = cart_obj.token
 
     # URLs: success_url and cancel_url
-    success_url = f"{BASE_DOMAIN}carts/{token}/receipt"
+    success_url = f"{BASE_DOMAIN}carts/{token}/receipt?stripe_session_id={{CHECKOUT_SESSION_ID}}"
     cancel_url = f"{BASE_DOMAIN}carts/{token}?cancelled=true"
 
     session = stripe.checkout.Session.create(
