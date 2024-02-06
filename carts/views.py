@@ -60,7 +60,7 @@ def show(request, token):
 def complete(request, token):
     cart = Cart.objects.get(token=token)
     if not cart.stripe_session_id:
-        cart.stripe_session_id = request.GET.get("")
+        cart.stripe_session_id = request.GET.get("CHECKOUT_SESSION_ID", "")
         cart.save()
     context = {"cart": cart}
     return render(request, "carts/complete.html", context=context)
